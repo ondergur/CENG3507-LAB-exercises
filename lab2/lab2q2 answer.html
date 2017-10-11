@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> CSS Selectors Lab 2 </title>
+	<style type="text/css">
+
+		ul li.x .y {
+		background-color: green; 
+		}
+
+		p + p.x + p a {
+			background-color: green;
+		}
+
+		[align=center] em:last-child {
+			background-color: red !important;
+		}
+
+		[align=center] em:nth-child(3) {
+			background-color: green;
+		}
+
+		div span {
+			background-color: red;
+		}
+
+		div > * > span {
+			background-color: green;
+		}
+
+		#q3 p + .a {
+			background-color: red !important;
+		}
+
+		#q3 p ~ .a {
+			background-color: green;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div><ul><li class="x"> <h1 class="y">YES</h1> </li></ul> </div>
+	<div> <p>NO</p><p class="x">NO</p><p><a href="https://web.whatsapp.com/">YES</a></p></div>
+	<div align="center"> <em>NO</em> <em>YES</em> </div>
+	<div align="center"> <em>NO</em> <em>NO</em> <em>YES</em> <em>NO</em></div>
+	<div><span>YES</span></div>
+	<div> <p> <span> YES</span></p></div>
+	<div id="q3"> <p> NO </p> <h1 class="a"> YES </h1></div>
+	<div id="q3"> <p> NO </p> <h1 class="a"> NO </h1> <h1 class="a"> YES </h1> </div>
+
+</p>
+</body>
+</html>

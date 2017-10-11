@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> CSS Selectors Lab 2</title>
+	<style type="text/css">
+
+		#grid {
+    		border: 1px solid black;
+    		border-collapse: collapse;
+    		margin: 20px auto;
+		}
+
+		td, th { 
+  			border: 1px solid black; 
+  			width: 25px; 
+			height: 25px; 
+			background-color: gray;
+			font-weight: normal; 
+			text-align: center; 
+			vertical-align: middle;
+		}
+
+		th { 
+			background-color : deeppink; /* cells: 1,2,4,8,21 */
+		}
+
+		*[rowspan] { 
+  			background-color : mediumpurple; /* cell: 13 */
+		}
+
+		thead *[colspan] { 
+  			background-color : tan; /* cell: 3 */
+		}
+
+		#mid { 
+  			background-color : sienna; /* cell: 26 */
+		}
+
+		tfoot th { 
+  			background-color: steelblue; /* cell: 24,25,27,28 */
+		}
+
+		tr.a .b { 
+   			background-color: gold; /* cell: 19 */
+		}
+
+		tbody .x td:nth-child(odd) { 
+   			background-color : lime; /* cells: 15,17 */
+		}
+
+		th.xxx+td+td.yyy+td { 
+   			background-color: tomato; /* cells: 7, 11 */  
+		}
+	</style>
+</head>
+<body>
+	<table id="grid">
+		<thead>
+			<th>1</th><th>2</th><th colspan="3">3</th>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="xxx">4</th><td>5</td><td class="yyy">6</td><td colspan="2">7</td>
+			</tr>
+			<tr>
+				<th class="xxx">8</th><td>9</td><td class="yyy">10</td><td>11</td><td>12</td>
+			</tr>
+			<tr class="x">
+				<th rowspan="2">13</th><td>14</td><td>15</td><td>16</td><td>17</td>
+			</tr>
+			<tr class="a">
+				<td>18</td><td colspan="2" rowspan="2" class="b">19</td><td>20</td>
+			</tr>
+			<tr>
+				<th>21</th><td>22</td><td>23</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<th>24</th><th>25</th><th id="mid">26</th><th>27</th><th>28</th>
+		</tfoot>
+	</table>
+
+</body>
+</html>

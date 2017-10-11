@@ -1,0 +1,120 @@
+
+<!-- saved from url=(0045)http://eng1.mu.edu.tr/~pembeci/ceng3507/lab1/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CENG 3507 - Lab II</title>
+
+<style>
+h3.mid {
+  border-top: 2px solid #555;
+  /* border-left: 2px solid #555; */
+  background-color: #bbb;
+  margin-left: 0px;
+  padding: 5px;
+  padding-left: 12px;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  width : 300px;
+}
+code {
+  background-color: #bbb;
+}
+pre {
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5em;
+  background-color :   #c2c2c2;
+  border : 1px solid #505050;
+  padding: 3px 8px;
+}
+
+body {
+  background-color :  #d4e2f2;
+  padding : 20px 100px 50px 100px;
+}
+</style></head>
+
+<body>
+<h2 align="center">Fall 2017 - CENG 3507 LAB II</h2>
+<h3 class="mid">Question</h3>
+<p align="center"><img src="./CENG 3507 - Lab II questions _files/table.png"></p>
+<p>Write the HTML code that will generate the above table by using the CSS definitions given below. You can't define 
+new ids, classes, CSS definitions, or modify the given ones. Just in your HTML code use the appropriate tags, classes, 
+and ids based on the CSS rules below. </p>
+<p>You may check <a href="http://www.crockford.com/wrrrld/color.html">this page</a> for CSS predefined color names.</p> 
+
+<pre>#grid {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+td, th { 
+  border: 1px solid black; 
+  width: 25px; 
+  height: 25px; 
+  background-color: gray;
+  font-weight: normal; 
+  text-align: center; 
+  vertical-align: middle;
+}
+th { 
+  background-color : deeppink; /* cells: 1,2,4,8,21 */
+}
+*[rowspan] { 
+  background-color : mediumpurple; /* cell: 13 */
+}
+thead *[colspan] { 
+  background-color : tan; /* cell: 3 */
+}
+#mid { 
+  background-color : sienna; /* cell: 26 */
+}
+tfoot th { 
+  background-color: steelblue; /* cell: 24,25,27,28 */
+}
+tr.a .b { 
+   background-color: gold; /* cell: 19 */
+}
+tbody .x td:nth-child(odd) { 
+   background-color : lime; /* cells: 15,17 */
+}
+th.xxx+td+td.yyy+td { 
+   background-color: tomato; /* cells: 7, 11 */  
+}
+</pre>
+
+<h3 class="mid">Question</h3>
+<p>Each part of this question gives some CSS definitions. For each one give an HTML code fragment which will contain an element 
+which has a green background (i.e. selected by the relevant selector) when included in a document which has these definitions. 
+Parts are independent of each other. Write "YES" as the HTML content of the selected element. </p>
+<p>For an explanation and discussion of the <code>!important</code> rule see this 
+<a href="https://appendto.com/2016/04/css-important-rule-how-to-use-it-correctly/">blog post</a>.</p>
+<p>
+Example:<br><br>
+<strong>Question</strong>: </p><pre>p em { background-color: green;}</pre>
+<strong>An answer</strong>:  <pre>&lt;p&gt;xx&lt;em&gt;YES&lt;/em&gt;yy&lt;/p&gt;</pre>
+<p></p>
+<ol type="a">
+<li>
+<pre>ul li.x .y { background-color: green; }</pre>
+</li>
+<li>
+<pre>p + p.x + p a { background-color: green; }</pre>
+</li>
+<li>
+<pre>[align=center] em:last-child { background-color: red !important; }
+[align=center] em:nth-child(3) { background-color: green; }
+</pre>
+</li>
+<li>
+<pre>div span { background-color: red; }
+div &gt; * &gt; span { background-color: green; }</pre>
+</li>
+<li>
+<pre>#q3 p + .a { background-color: red !important; }
+#q3 p ~ .a { background-color: green; }</pre>
+</li>
+
+</ol>
+
+
+</body></html>
