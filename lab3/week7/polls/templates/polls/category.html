@@ -1,0 +1,8 @@
+<h1> You are seeing questions of Category {{q_category}}</h1>
+<ul>
+{% for q in all_questions %}
+    {% if q.category == q_category%}
+        <li><a href="{% url 'detail' q.id %}">{{ q.question_text }}</a></li>
+    {%endif%}
+{%endfor%}
+</ul>

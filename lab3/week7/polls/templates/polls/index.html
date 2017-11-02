@@ -1,0 +1,15 @@
+
+<h1> Welcome to the polls page.</h1>
+<h2> You're seeing all questions under their categories</h2>
+{% if all_questions %}
+    <ul>
+    {% for c in all_categories %}
+        <h3><a href="{% url 'category' c %}">Category {{c}}</a></h3>
+        {% for q in all_questions %}
+            {% if q.category == c %}
+                <li><a href="{% url 'detail' q.id %}">{{ q.question_text }}</a></li>
+            {%endif%}
+        {%endfor%}
+    {%endfor%}
+    </ul>
+{% endif %}
